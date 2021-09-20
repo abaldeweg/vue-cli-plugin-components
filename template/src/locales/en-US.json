@@ -1,0 +1,17 @@
+{
+  "home": "Home",
+  "profile": "Profile",
+  "settings": "Settings",
+  "hello": "Hello",
+  "username": "Username",
+  "password": "Password",
+  "changePassword": "Change Password",
+  "login": "Login",
+  "logout": "Logout",
+  "themes": "Themes",
+  "language": "Language",
+  "notFound": "Not Found",
+  "notFoundDesc": "The requested page could not be found.",
+  "goToHomepage": "Go to homepage",
+  "save": "Save"
+}

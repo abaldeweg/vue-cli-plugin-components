@@ -1,0 +1,17 @@
+{
+  "home": "Start",
+  "profile": "Profil",
+  "settings": "Einstellungen",
+  "hello": "Hallo",
+  "username": "Nutzername",
+  "password": "Passwort",
+  "changePassword": "Passwort ändern",
+  "login": "Login",
+  "logout": "Logout",
+  "themes": "Themes",
+  "language": "Sprache",
+  "notFound": "Seite nicht gefunden",
+  "notFoundDesc": "Die gesuchte Seite konnte leider nicht gefunden werden.",
+  "goToHomepage": "Zur Startseite",
+  "save": "Speichern"
+}
