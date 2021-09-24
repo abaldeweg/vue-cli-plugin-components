@@ -12,7 +12,7 @@ module.exports = (api, options) => {
     license: options.license,
     scripts: {
       watch: 'vue-cli-service serve',
-      generate: 'vue-cli-service components:generate'
+      'components:generate': 'vue-cli-service components:generate'
     },
   })
 
