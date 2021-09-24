@@ -1,6 +1,6 @@
 {
   "name": "@baldeweg/vue-cli-plugin-components",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Plugin for @baldeweg/components and VueJS.",
   "repository": "git@github.com:abaldeweg/vue-cli-plugin-components.git",
   "author": "André Baldeweg <a@baldeweg.org>",
