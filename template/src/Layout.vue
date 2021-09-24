@@ -2,7 +2,7 @@
   <b-app>
     <b-masthead>
       <b-masthead-item type="center">
-        <router-link :to="{ name: 'inddex' }">
+        <router-link :to="{ name: 'index' }">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="50"
