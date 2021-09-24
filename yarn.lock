@@ -2,12 +2,12 @@
 # yarn lockfile v1
 
 
-"@baldeweg/components@7.0.0-beta.9":
-  version "7.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@baldeweg/components/-/components-7.0.0-beta.9.tgz#e62e672d9425f328d8bb5ce300ead26215d92bb0"
-  integrity sha512-XavY87MVdqn3RajKlFSoS/IdWSgzqQmI09lGUIQU36zw1qNfcnekOzLDtXWrod2IkmTfDzKpDSOo8qLIN/50oA==
+"@baldeweg/components@7.0.0-beta.10":
+  version "7.0.0-beta.10"
+  resolved "https://registry.yarnpkg.com/@baldeweg/components/-/components-7.0.0-beta.10.tgz#5d023df5d5dcf49bac1c0356024031b53951ac95"
+  integrity sha512-lxMoKpoelQMI2gyk6zKfsY4yxVt6iHT5H3xCD4Vh3/TE5SuNs3irIONOyjXrXiZitkK0BD1QCLUaomLfMOfj7A==
   dependencies:
-    core-js "3.17.2"
+    core-js "3.18.0"
     vue "2.6.14"
     vue-meta "2.4.0"
     vue-router "3.5.2"
@@ -44,10 +44,10 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-core-js@3.17.2:
-  version "3.17.2"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.17.2.tgz#f960eae710dc62c29cca93d5332e3660e289db10"
-  integrity sha512-XkbXqhcXeMHPRk2ItS+zQYliAMilea2euoMsnpRRdDad6b2VY6CQQcwz1K8AnWesfw4p165RzY0bTnr3UrbYiA==
+core-js@3.18.0:
+  version "3.18.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.18.0.tgz#9af3f4a6df9ba3428a3fb1b171f1503b3f40cc49"
+  integrity sha512-WJeQqq6jOYgVgg4NrXKL0KLQhi0CT4ZOCvFL+3CQ5o7I6J8HkT5wd53EadMfqTDp1so/MT1J+w2ujhWcCJtN7w==
 
 deepmerge@^4.2.2:
   version "4.2.2"
@@ -74,9 +74,9 @@ fs.realpath@^1.0.0:
   integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
 
 glob@^7.1.3:
-  version "7.1.7"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.7.tgz#3b193e9233f01d42d0b3f78294bbeeb418f94a90"
-  integrity sha512-OvD9ENzPLbegENnYP5UUfJIirTg4+XwMWGaQfQTY0JenxNvvIKP3U3/tAQSPIu/lHxXYSZmpXlUHeqAIdKzBLQ==
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.2.0.tgz#d15535af7732e02e948f4c41628bd910293f6023"
+  integrity sha512-lmLf6gtyrPq8tTjSmrO94wBeQbFR3HbLHbuyD69wuyQkImp2hWqMGB47OX65FBkPffO641IP9jWa1z4ivqG26Q==
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
