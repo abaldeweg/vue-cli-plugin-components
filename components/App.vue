@@ -1,8 +1,8 @@
 <template>
   <layout :auth="auth">
-    <router-view :auth="auth" v-if="auth.state.isAuthenticated" />
+    <router-view :auth="auth" v-if="!needsAuth || auth.state.isAuthenticated" />
 
-    <b-container size="s" v-if="!auth.state.isAuthenticated">
+    <b-container size="s" v-if="needsAuth && !auth.state.isAuthenticated">
       <h1>{{ $t('login') }}</h1>
       <auth-login />
     </b-container>
@@ -30,9 +30,10 @@ export default {
     },
   },
   setup() {
-    const auth = useAuth()
+    const needsAuth = config.pluginOptions.baldeweg.needsAuth || true
+    const auth = needsAuth ? useAuth() : null
 
-    return { auth }
+    return { needsAuth, auth }
   },
 }
 </script>

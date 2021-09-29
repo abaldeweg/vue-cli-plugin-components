@@ -2,13 +2,13 @@ const cli = require('./cli')
 
 module.exports = (api, options) => {
   api.configureWebpack((config) => {
-    config.resolve.alias['~b'] = __dirname + '/../../../.framework'
-    config.entry.app = ['./.framework/main.js']
+    config.resolve.alias['~b'] = __dirname + '/../../../.components'
+    config.entry.app = ['./.components/main.js']
   })
 
   api.chainWebpack((config) => {
     config.plugin('html').tap((args) => {
-      args[0].template = './.framework/public/index.html'
+      args[0].template = './.components/public/index.html'
       return args
     })
   })
@@ -16,7 +16,7 @@ module.exports = (api, options) => {
   api.registerCommand(
     'components:generate',
     {
-      description: 'Generates the framework files.',
+      description: 'Generates the components files.',
       usage: 'vue-cli-service components:generate'
     },
     () => {
