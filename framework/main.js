@@ -15,5 +15,5 @@ new Vue({
   i18n,
   meta,
   components,
-  render: h => h(App),
+  render: (h) => h(App),
 }).$mount('#app')

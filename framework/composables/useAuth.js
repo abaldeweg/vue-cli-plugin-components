@@ -2,7 +2,7 @@ import { onMounted, reactive } from '@vue/composition-api'
 import api from '~b/api/auth'
 import Cookies from 'js-cookie'
 
-export default function useAuth(emit) {
+export default function useAuth() {
   const state = reactive({
     username: null,
     password: null,
@@ -16,10 +16,83 @@ export default function useAuth(emit) {
     passwordError: false,
   })
 
+  const login = () => {
+    state.isLoggingIn = true
+    api
+      .login({
+        username: state.username,
+        password: state.password,
+      })
+      .then((response) => {
+        Cookies.set('token', response.data.token, { expires: 7 })
+        Cookies.set('refresh_token', response.data.refresh_token, {
+          expires: 30,
+        })
+
+        state.isAuthenticated = true
+        state.username = null
+        state.password = null
+
+        check()
+      })
+      .catch(() => {
+        state.wrongCredentials = true
+      })
+      .finally(() => {
+        state.isLoggingIn = false
+      })
+  }
+
+  const logout = () => {
+    window.clearInterval(state.interval)
+
+    Cookies.remove('token')
+    Cookies.remove('refresh_token')
+
+    state.isAuthenticated = false
+    state.me = null
+  }
+
+  const changePassword = () => {
+    state.isChangingPassword = true
+    api
+      .changePassword({
+        password: state.password,
+      })
+      .then(() => {
+        state.passwordSuccessful = true
+        state.password = null
+      })
+      .catch(() => {
+        state.passwordError = true
+      })
+      .finally(() => {
+        state.isChangingPassword = false
+      })
+  }
+
+  const refresh = () => {
+    api
+      .refresh({
+        refresh_token: Cookies.get('refresh_token'),
+      })
+      .then((response) => {
+        Cookies.set('token', response.data.token, { expires: 7 })
+        Cookies.set('refresh_token', response.data.refresh_token, {
+          expires: 30,
+        })
+
+        state.isAuthenticated = true
+      })
+      .catch(() => {
+        logout()
+      })
+  }
+
   const session = () => {
     if (undefined !== Cookies.get('token')) {
       state.isAuthenticated = true
-      getUser()
+      me()
     }
     if (
       undefined === Cookies.get('token') &&
@@ -35,6 +108,21 @@ export default function useAuth(emit) {
     }
   }
 
+  const me = () => {
+    api
+      .me()
+      .then((response) => {
+        state.me = response.data
+      })
+      .catch((error) => {
+        if (error.response.status === 401) {
+          logout()
+        }
+      })
+  }
+
+  onMounted(me)
+
   const check = () => {
     session()
     state.interval = window.setInterval(() => {
@@ -42,91 +130,12 @@ export default function useAuth(emit) {
     }, 30000)
   }
 
-  const login = () => {
-    state.isLoggingIn = true
-    api.login({
-      username: state.username,
-      password: state.password,
-    })
-      .then(response => {
-        Cookies.set('token', response.data.token, { expires: 7 })
-        Cookies.set('refresh_token', response.data.refresh_token, {
-          expires: 30,
-        })
-        state.isAuthenticated = true
-        emit('loggedin')
-        check()
-        state.username = null
-        state.password = null
-      })
-      .catch(() => {
-        state.wrongCredentials = true
-      })
-      .finally(() => {
-        state.isLoggingIn = false
-      })
-  }
-
-  const logout = () => {
-    window.clearInterval(state.interval)
-    Cookies.remove('token')
-    Cookies.remove('refresh_token')
-    state.isAuthenticated = false
-    state.me = null
-    emit('loggedout')
-  }
-
-  const refresh = () => {
-    api.refresh()
-      .then(response => {
-        Cookies.set('token', response.data.token, { expires: 7 })
-        Cookies.set('refresh_token', response.data.refresh_token, {
-          expires: 30,
-        })
-        state.isAuthenticated = true
-      })
-      .catch(() => {
-        logout()
-      })
-  }
-
-  const changePassword = () => {
-    state.isChangingPassword = true
-    api.changePassword(state.password)
-      .then(() => {
-        state.passwordSuccessful = true
-        state.password = null
-      })
-      .catch(() => {
-        state.passwordError = true
-      })
-      .finally(() => {
-        state.isChangingPassword = false
-      })
-  }
-
-  const getUser = () => {
-    api.me()
-      .then(response => {
-        state.me = response.data
-      })
-      .catch(e => {
-        if (e.response.status === 401) {
-          logout()
-        }
-      })
-  }
-
-  onMounted(getUser)
+  onMounted(check)
 
   return {
     state,
     login,
-    changePassword,
-    refresh,
-    getUser,
     logout,
-    check,
-    session,
+    changePassword,
   }
 }
