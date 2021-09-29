@@ -1,6 +1,6 @@
 <template>
   <layout :auth="auth">
-    <router-view v-if="auth.state.isAuthenticated" />
+    <router-view :auth="auth" v-if="auth.state.isAuthenticated" />
 
     <b-container size="s" v-if="!auth.state.isAuthenticated">
       <h1>{{ $t("login") }}</h1>
