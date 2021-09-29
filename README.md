@@ -20,12 +20,12 @@ import request from '~b/api'
 
 The locale files are loaded automatically from `src/locales`.
 
-Options
+## Options
 
 Add the following to `vue.config.js` under the `pluginOptions` key.
 
 ```json
-"baldeweg": {
+"components": {
   "title": "test",
   "needsAuth": true
 }

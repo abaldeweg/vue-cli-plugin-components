@@ -25,12 +25,12 @@ export default {
     title: 'Home',
     titleTemplate: (title) => {
       return title
-        ? title + ' - ' + config.pluginOptions.baldeweg.title
-        : config.pluginOptions.baldeweg.title
+        ? title + ' - ' + config.pluginOptions.components.title
+        : config.pluginOptions.components.title
     },
   },
   setup() {
-    const needsAuth = config.pluginOptions.baldeweg.needsAuth || true
+    const needsAuth = config.pluginOptions.components.needsAuth || true
     const auth = needsAuth ? useAuth() : null
 
     return { needsAuth, auth }
