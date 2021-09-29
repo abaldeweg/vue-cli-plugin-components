@@ -36,16 +36,18 @@
 </template>
 
 <script>
-import useAuth from '~b/composables/useAuth'
 import { ref, watch } from '@vue/composition-api'
 
 export default {
   name: 'auth-password',
+  props: {
+    auth: Object
+  },
   setup() {
     const passwordSuccessful = ref(null)
     const passwordError = ref(null)
 
-    const auth = useAuth()
+    const auth = auth
 
     watch(
       () => auth.state.passwordSuccessful,
@@ -64,7 +66,6 @@ export default {
     )
 
     return {
-      auth,
       passwordSuccessful,
       passwordError,
     }

@@ -45,7 +45,6 @@
 <script>
 export default {
   name: 'layout',
-  components: {},
   props: {
     auth: {
       type: Object,

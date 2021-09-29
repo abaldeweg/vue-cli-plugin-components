@@ -50,15 +50,17 @@
 </template>
 
 <script>
-import useAuth from '~b/composables/useAuth'
 import { ref, watch } from '@vue/composition-api'
 
 export default {
   name: 'auth-login',
-  setup() {
+  props: {
+    auth: Object
+  },
+  setup(props) {
     const wrongCredentials = ref(null)
 
-    const auth = useAuth()
+    const auth = props.auth
 
     watch(
       () => auth.state.wrongCredentials,
@@ -68,7 +70,7 @@ export default {
       }
     )
 
-    return { auth, wrongCredentials }
+    return { wrongCredentials }
   },
 }
 </script>
