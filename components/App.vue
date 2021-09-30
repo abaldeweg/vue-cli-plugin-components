@@ -4,7 +4,7 @@
 
     <b-container size="s" v-if="needsAuth && !auth.state.isAuthenticated">
       <h1>{{ $t('login') }}</h1>
-      <auth-login />
+      <auth-login :auth="auth"/>
     </b-container>
   </layout>
 </template>

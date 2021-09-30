@@ -43,11 +43,11 @@ export default {
   props: {
     auth: Object
   },
-  setup() {
+  setup(props) {
     const passwordSuccessful = ref(null)
     const passwordError = ref(null)
 
-    const auth = auth
+    const auth = props.auth
 
     watch(
       () => auth.state.passwordSuccessful,
