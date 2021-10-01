@@ -11,6 +11,7 @@ module.exports = (api, options) => {
     author: options.author + ' <' + options.mail + '>',
     license: options.license,
     scripts: {
+      'i18n:report': 'vue-cli-service i18n:report --src \"./{src,.components}/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"',
       watch: 'vue-cli-service serve',
       'components:generate': 'vue-cli-service components:generate'
     },
