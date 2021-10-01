@@ -7,6 +7,7 @@ COPY ./package.json ./
 COPY ./yarn.lock ./
 RUN yarn install
 COPY . .
+RUN yarn components:generate
 
 ARG VUE_APP_API
 ENV VUE_APP_API=$VUE_APP_API
