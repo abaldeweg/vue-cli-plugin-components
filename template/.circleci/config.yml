@@ -1,0 +1,16 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.7.0
+workflows:
+  tests:
+    jobs:
+      - node/test:
+          matrix:
+            parameters:
+              version:
+                - 'lts'
+                - '12.22'
+              run-command:
+                - 'test:unit'
+                - 'test:e2e --headless'
+          pkg-manager: yarn
