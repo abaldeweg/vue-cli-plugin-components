@@ -30,7 +30,7 @@ export default {
     },
   },
   setup() {
-    const needsAuth = config.pluginOptions.components.needsAuth || true
+    const needsAuth = config.pluginOptions.components.needsAuth
     const auth = needsAuth ? useAuth() : null
 
     return { needsAuth, auth }
