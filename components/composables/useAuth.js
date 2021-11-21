@@ -1,6 +1,6 @@
 import { onMounted, reactive } from '@vue/composition-api'
-import api from '~b/api/auth'
 import Cookies from 'js-cookie'
+import { request } from '~b/api'
 
 export default function useAuth() {
   const state = reactive({
@@ -18,11 +18,11 @@ export default function useAuth() {
 
   const login = () => {
     state.isLoggingIn = true
-    api
-      .login({
-        username: state.username,
-        password: state.password,
-      })
+
+    return request('post', '/api/login_check', {
+      username: state.username,
+      password: state.password,
+    })
       .then((response) => {
         Cookies.set('token', response.data.token, { expires: 7 })
         Cookies.set('refresh_token', response.data.refresh_token, {
@@ -55,10 +55,10 @@ export default function useAuth() {
 
   const changePassword = () => {
     state.isChangingPassword = true
-    api
-      .changePassword({
-        password: state.password,
-      })
+
+    return request('put', '/api/password', {
+      password: state.password,
+    })
       .then(() => {
         state.passwordSuccessful = true
         state.password = null
@@ -72,10 +72,9 @@ export default function useAuth() {
   }
 
   const refresh = () => {
-    api
-      .refresh({
-        refresh_token: Cookies.get('refresh_token'),
-      })
+    return request('post', '/api/token/refresh', {
+      refresh_token: Cookies.get('refresh_token'),
+    })
       .then((response) => {
         Cookies.set('token', response.data.token, { expires: 7 })
         Cookies.set('refresh_token', response.data.refresh_token, {
@@ -109,8 +108,7 @@ export default function useAuth() {
   }
 
   const me = () => {
-    api
-      .me()
+    return request('get', '/api/me')
       .then((response) => {
         state.me = response.data
       })

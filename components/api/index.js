@@ -14,10 +14,25 @@ const headers = () => {
   return items
 }
 
-export default function () {
+const create = () => {
   return axios.create({
     baseURL: process.env.VUE_APP_API,
     timeout: 50000,
     headers: headers(),
   })
+}
+
+const request = (method, url, data) => {
+  return create().request({
+    method,
+    url,
+    data,
+  })
+}
+
+export { request }
+
+// @deprecated
+export default function () {
+  return create()
 }
