@@ -5,7 +5,7 @@
     </b-container>
 
     <b-container size="m">
-      <auth-password />
+      <auth-password :auth="auth" />
     </b-container>
 
     <b-container size="m">
@@ -29,6 +29,9 @@ export default {
     AuthPassword,
     ProfileLocale,
     ProfileTheme,
+  },
+  props: {
+    auth: Object,
   },
   head: {
     title: 'Profile',
