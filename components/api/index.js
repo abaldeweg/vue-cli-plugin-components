@@ -31,8 +31,3 @@ const request = (method, url, data) => {
 }
 
 export { request }
-
-// @deprecated
-export default function () {
-  return create()
-}
