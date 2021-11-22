@@ -22,7 +22,7 @@ const create = () => {
   })
 }
 
-const request = (method, url, data) => {
+const request = (method, url, data, params) => {
   return create().request({
     method,
     url,
