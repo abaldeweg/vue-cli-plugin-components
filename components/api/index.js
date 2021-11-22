@@ -27,6 +27,7 @@ const request = (method, url, data) => {
     method,
     url,
     data,
+    params,
   })
 }
 
