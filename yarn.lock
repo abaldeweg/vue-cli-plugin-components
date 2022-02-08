@@ -2,12 +2,12 @@
 # yarn lockfile v1
 
 
-"@baldeweg/components@7.0.0-beta.12":
-  version "7.0.0-beta.12"
-  resolved "https://registry.yarnpkg.com/@baldeweg/components/-/components-7.0.0-beta.12.tgz#de431ec7123f934160cc8992da7096b0b3faed9b"
-  integrity sha512-M6AxLEWbeEDTZX+4F4ZbfdI81TRwjlTcqon+E31e2Hwygq8LkpAgMB+wVGvdjTrM0wnjGQcOs0xOYZGDQipvzw==
+"@baldeweg/components@7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@baldeweg/components/-/components-7.1.0.tgz#bae19a4660588e1665ec5299e9b44d4528541e2c"
+  integrity sha512-aHcuA7RMx3cBQo6OER1oJyTEzh9hOEnxF4avjkslNwo7aRiIhymjj1p1vr1wgZvSWWjBGTjFIlDzjfPcNVwdgg==
   dependencies:
-    core-js "3.19.1"
+    core-js "3.21.0"
     vue "2.6.14"
     vue-meta "2.4.0"
     vue-router "3.5.3"
@@ -42,10 +42,10 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-core-js@3.19.1:
-  version "3.19.1"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.19.1.tgz#f6f173cae23e73a7d88fa23b6e9da329276c6641"
-  integrity sha512-Tnc7E9iKd/b/ff7GFbhwPVzJzPztGrChB8X8GLqoYGdEOG8IpLnK1xPyo3ZoO3HsK6TodJS58VGPOxA+hLHQMg==
+core-js@3.21.0:
+  version "3.21.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.21.0.tgz#f479dbfc3dffb035a0827602dd056839a774aa71"
+  integrity sha512-YUdI3fFu4TF/2WykQ2xzSiTQdldLB4KVuL9WeAy5XONZYt5Cun/fpQvctoKbCgvPhmzADeesTk/j2Rdx77AcKQ==
 
 deepmerge@^4.2.2:
   version "4.2.2"
