@@ -9,7 +9,7 @@
     "@baldeweg/components": "7.1.0",
     "@vue/composition-api": "1.4.6",
     "axios": "0.26.0",
-    "fs-extra": "10.0.0",
+    "fs-extra": "10.0.1",
     "js-cookie": "3.0.1",
     "rimraf": "3.0.2",
     "vue-meta": "2.4.0"
