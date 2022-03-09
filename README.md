@@ -13,7 +13,7 @@ yarn add @baldeweg/vue-cli-plugin-components --dev
 Import the api, so you can make use of axios. The auth is automatically included.
 
 ```javascript
-import request from '~b/api'
+import { request } from '~b/api'
 ```
 
 ## Locales
