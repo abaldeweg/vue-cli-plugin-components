@@ -6,7 +6,7 @@
   "author": "André Baldeweg <a@baldeweg.org>",
   "license": "MIT",
   "dependencies": {
-    "@baldeweg/components": "7.2.0",
+    "@baldeweg/components": "7.3.0",
     "@vue/composition-api": "1.4.9",
     "axios": "0.26.1",
     "fs-extra": "10.0.1",

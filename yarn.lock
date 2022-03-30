@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@baldeweg/components@7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@baldeweg/components/-/components-7.2.0.tgz#7ba3763c07c4155cf6d4b91fcc2c5a1b320df689"
-  integrity sha512-bNNSW9V+o4hOMZtGlkH+GuejFi7ILrMLLKXuzOP7pMMsZY14hnUQFiKMLTnGNs5u7L8a1h9WyPVl8mLpp0Bzxg==
+"@baldeweg/components@7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@baldeweg/components/-/components-7.3.0.tgz#31a580a879ae457be86c1c28ffea19c6158fae3a"
+  integrity sha512-hTVIP98sVEQ7jy6dfOVF6nPBy6rh8VECHc+XixsI9dshvGStL1xLdKUojyslfuYDEDp3MSDt0SBUDGg18UapiA==
   dependencies:
     core-js "3.21.1"
     vue "2.6.14"
